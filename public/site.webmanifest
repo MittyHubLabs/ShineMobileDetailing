@@ -1,0 +1,19 @@
+{
+  "name": "Shine Mobile Detailing",
+  "short_name": "Shine Mobile",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1a6b3a",
+  "background_color": "#c8c8c8",
+  "display": "standalone"
+}

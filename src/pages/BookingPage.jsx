@@ -45,6 +45,7 @@ const emptyContact = {
   name: '',
   phone: '',
   email: '',
+  referralCode: '',
   address: '',
   preferredDate: null,
   preferredTime: '',
@@ -307,6 +308,7 @@ export default function BookingPage() {
             : '',
           time: booking.preferredTime,
           address: booking.address,
+          referral_code: booking.referralCode || 'None',
         });
       } catch (emailErr) {
         console.error('EmailJS confirmation failed:', emailErr);
@@ -648,6 +650,15 @@ export default function BookingPage() {
                       className="booking-field-input"
                       placeholder="you@email.com"
                       autoComplete="email"
+                    />
+                  </BookingField>
+                  <BookingField label="Referral Code (Optional)">
+                    <input
+                      type="text"
+                      value={contact.referralCode}
+                      onChange={updateContact('referralCode')}
+                      className="booking-field-input"
+                      placeholder="Enter a friend's name if they referred you"
                     />
                   </BookingField>
                   <BookingField label="Service Address">

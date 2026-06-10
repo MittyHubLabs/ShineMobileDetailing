@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Now | Shine Mobile</title>
+  <meta name="description" content="Book your mobile detail with Shine Mobile in Orlando, FL." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/logo-dark.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="topbar" id="header">
+    <div class="topbar-inner">
+      <a href="index.html" class="topbar-logo">
+        <img src="assets/logo-dark.png" alt="Shine Mobile" />
+      </a>
+      <nav class="topbar-nav" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#packages">Packages</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="is-on">Book</a>
+      </nav>
+      <div class="topbar-right">
+        <a href="tel:4075550142" class="topbar-phone">(407) 555 0142</a>
+        <a href="contact.html" class="btn btn-sm">Book Now</a>
+        <button class="nav-toggle" id="hamburger" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <header class="page-top fade-in">
+      <span class="tag">Book now</span>
+      <h1>Schedule your detail</h1>
+      <p>Fill out the form. We confirm within the hour.</p>
+    </header>
+
+    <div class="content">
+      <div class="book-grid fade-in">
+        <aside>
+          <div class="book-line">
+            <span class="label">Phone</span>
+            <a href="tel:4075550142">(407) 555 0142</a>
+          </div>
+          <div class="book-line">
+            <span class="label">Email</span>
+            <a href="mailto:hello@shinemobile.com">hello@shinemobile.com</a>
+          </div>
+          <div class="book-line">
+            <span class="label">Area</span>
+            <p>Orlando and Central Florida, 40 mile radius</p>
+          </div>
+          <div class="book-line">
+            <span class="label">Hours</span>
+            <p>Every day 8:00 AM to 7:00 PM</p>
+          </div>
+        </aside>
+
+        <div class="book-form">
+          <div id="form-success" class="form-success" role="status">
+            Thanks! We will be in touch shortly to confirm your appointment.
+          </div>
+          <form id="contact-form">
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Smith" />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(407) 555 0000" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="you@email.com" />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a package</option>
+                  <option value="refresh">The Refresh, $149+</option>
+                  <option value="restoration">The Restoration, $349+</option>
+                  <option value="preservation">The Preservation, $899+</option>
+                  <option value="fleet">Fleet or Recurring Plan</option>
+                  <option value="other">Not sure, need a quote</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="vehicle">Vehicle</label>
+                <input type="text" id="vehicle" name="vehicle" placeholder="2022 BMW M4" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="address">Service Address</label>
+              <input type="text" id="address" name="address" required placeholder="Street, City, ZIP" />
+            </div>
+            <div class="field">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <div class="field">
+              <label for="message">Notes</label>
+              <textarea id="message" name="message" placeholder="Vehicle condition, add ons, requests..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-block">Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo-dark.png" alt="Shine Mobile" />
+        <p>Mobile car detailing in Orlando. We come to you seven days a week.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Phone</h4>
+        <a href="tel:4075550142">(407) 555 0142</a>
+      </div>
+      <div class="foot-col">
+        <h4>Email</h4>
+        <a href="mailto:hello@shinemobile.com">hello@shinemobile.com</a>
+      </div>
+      <div class="foot-col">
+        <h4>Hours</h4>
+        <p>Every day 8 AM to 7 PM</p>
+      </div>
+    </div>
+    <p class="foot-base">&copy; 2026 Shine Mobile · Orlando, FL</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

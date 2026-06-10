@@ -1,0 +1,52 @@
+export const PACKAGE_TIER_STYLES = {
+  basic: {
+    bg: 'bg-[#1a2744]',
+    headerBg: 'bg-[#1a3a6b]',
+    borderTop: 'border-t-4 border-t-[#3b82f6]',
+    accent: 'text-[#3b82f6]',
+    accentBorder: 'border-[#3b82f6]',
+    bullet: 'bg-[#3b82f6]',
+    divider: 'bg-[#3b82f6]/25',
+    selected: 'ring-2 ring-[#3b82f6] shadow-lg shadow-[#3b82f6]/25',
+    headerLabel: 'text-[#3b82f6]',
+    checkClass: 'text-[#3b82f6]',
+    columnTint: 'bg-[#1a2744]/40',
+    badge: 'bg-[#3b82f6]/20 text-[#3b82f6]',
+    includesBorder: 'border-t border-[#3b82f6]/20',
+  },
+  standard: {
+    bg: 'bg-[#0d2e1a]',
+    headerBg: 'bg-[#1a5c35]',
+    borderTop: 'border-t-4 border-t-[#1a6b3a]',
+    accent: 'text-[#1a6b3a]',
+    accentBorder: 'border-[#1a6b3a]',
+    bullet: 'bg-[#1a6b3a]',
+    divider: 'bg-[#1a6b3a]/25',
+    selected: 'ring-2 ring-[#1a6b3a] shadow-lg shadow-[#1a6b3a]/25',
+    headerLabel: 'text-[#1a6b3a]',
+    checkClass: 'text-[#1a6b3a]',
+    columnTint: 'bg-[#0d2e1a]/40',
+    badge: 'bg-[#1a6b3a] text-white',
+    bestValueBadge: 'bg-[#1a6b3a] text-white',
+    includesBorder: 'border-t border-[#1a6b3a]/20',
+  },
+  premium: {
+    bg: 'bg-[#2a1f00]',
+    headerBg: 'bg-[#7c5a1e]',
+    borderTop: 'border-t-4 border-t-[#d4af37]',
+    accent: 'text-[#d4af37]',
+    accentBorder: 'border-[#d4af37]',
+    bullet: 'bg-[#d4af37]',
+    divider: 'bg-[#d4af37]/25',
+    selected: 'ring-2 ring-[#d4af37] shadow-lg shadow-[#d4af37]/25',
+    headerLabel: 'text-[#d4af37]',
+    checkClass: 'text-[#d4af37]',
+    columnTint: 'bg-[#2a1f00]/40',
+    badge: 'bg-[#d4af37]/20 text-[#d4af37]',
+    includesBorder: 'border-t border-[#d4af37]/20',
+  },
+};
+
+export function getTierStyle(tierId) {
+  return PACKAGE_TIER_STYLES[tierId] ?? PACKAGE_TIER_STYLES.basic;
+}

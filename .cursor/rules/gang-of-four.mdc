@@ -1,0 +1,58 @@
+---
+description: Apply Gang of Four design patterns when writing or refactoring code
+alwaysApply: true
+---
+
+# Gang of Four Design Patterns
+
+Use GoF patterns where they reduce coupling and clarify intent — never pattern-for-pattern's sake.
+
+## Principles
+
+- Favor **composition over inheritance**
+- **Program to interfaces**, not implementations
+- Name roles explicitly: `FormSubmissionStrategy`, `NavigationFacade`, `ScrollObserver`
+
+## When to Use
+
+| Category | Use when |
+|----------|----------|
+| **Creational** (Factory, Builder, Singleton) | Object creation is complex or varies by context |
+| **Structural** (Facade, Adapter, Decorator) | Simplifying subsystems or extending behavior without subclassing |
+| **Behavioral** (Strategy, Observer, Command, Template Method) | Algorithms, events, or workflows need to vary or decouple |
+
+## This Project (HTML/CSS/JS)
+
+- **Facade** — one entry module wires nav, animations, forms (`SiteApp.init()`)
+- **Observer** — scroll/intersection events notify UI components
+- **Strategy** — swappable handlers (e.g. mock form vs Formspree vs API)
+- **Template Method** — shared page lifecycle with per-page hooks
+
+## Examples
+
+```javascript
+// ✅ Strategy — swappable form backends
+class FormspreeStrategy {
+  submit(data) { /* ... */ }
+}
+class MockFormStrategy {
+  submit(data) { /* show success UI */ }
+}
+
+// ✅ Facade — single public API
+const SiteApp = {
+  init() {
+    Navigation.init();
+    ScrollAnimations.init();
+    ContactForm.init(new FormspreeStrategy(endpoint));
+  }
+};
+
+// ❌ Avoid — monolithic script with tangled DOM + fetch + scroll logic
+```
+
+## Don't
+
+- Force patterns into static markup-only changes
+- Add abstraction layers with only one implementation
+- Use Singleton for global mutable state without clear need

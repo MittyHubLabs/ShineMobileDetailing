@@ -1,0 +1,60 @@
+import { Armchair, Brush, Bug, CircleDot, Layers, Shield, Wind} from 'lucide-react';
+
+export const ADDONS = [
+ {
+ id: 'clay-bar',
+ label: 'Clay Bar Treatment',
+ price: 45,
+ priceLabel: '+$45',
+ description: 'Makes paint smooth by removing contaminants.',
+ icon: Layers,
+},
+ {
+ id: 'hand-wax',
+  label: 'Ceramic Wax',
+ price: 35,
+ priceLabel: '+$35',
+ description: 'Adds shine and protection.',
+ icon: Shield,
+},
+ {
+ id: 'bug-tar',
+ label: 'Deep Bug & Tar Removal',
+ price: 20,
+ priceLabel: '+$20',
+ description: 'Safely removes stubborn bugs and road tar.',
+ icon: Bug,
+},
+ {
+ id: 'pet-hair',
+ label: 'Pet Hair Removal',
+ price: 40,
+ priceLabel: 'Starting at +$40',
+ description: 'Removes embedded pet hair from carpets and seats.',
+ icon: Brush,
+},
+ {
+ id: 'seat-shampoo',
+ label: 'Seat Shampoo / Extraction',
+ price: 55,
+ priceLabel: '+$55',
+ description: 'Deep cleans fabric seats and lifts stains.',
+ icon: Armchair,
+},
+ {
+ id: 'odor-treatment',
+ label: 'Interior Odor Treatment',
+ price: 35,
+ priceLabel: '+$35',
+ description: 'Leaves your interior fresh and odor-free.',
+ icon: Wind,
+},
+ {
+ id: 'headlight',
+ label: 'Headlight Restoration',
+ price: 60,
+ priceLabel: '+$60',
+ description: 'Restores cloudy headlights for improved appearance.',
+ icon: CircleDot,
+},
+];

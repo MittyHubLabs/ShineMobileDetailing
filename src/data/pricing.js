@@ -6,7 +6,7 @@ export const VEHICLE_PRICING = [
  prices: {
  exterior: 30,
  interior: 40,
- full: { basic: 60, standard: 90, premium: 155},
+ full: { basic: 50, standard: 80, premium: 130},
 },
 },
  {
@@ -16,7 +16,7 @@ export const VEHICLE_PRICING = [
  prices: {
  exterior: 40,
  interior: 50,
- full: { basic: 70, standard: 100, premium: 185},
+ full: { basic: 60, standard: 90, premium: 140},
 },
 },
  {
@@ -26,7 +26,7 @@ export const VEHICLE_PRICING = [
  prices: {
  exterior: 50,
  interior: 60,
- full: { basic: 80, standard: 110, premium: 215},
+ full: { basic: 70, standard: 100, premium: 150},
 },
 },
  {
@@ -36,7 +36,7 @@ export const VEHICLE_PRICING = [
  prices: {
  exterior: 60,
  interior: 70,
- full: { basic: 90, standard: 120, premium: 245},
+ full: { basic: 80, standard: 110, premium: 160},
 },
 },
 ];

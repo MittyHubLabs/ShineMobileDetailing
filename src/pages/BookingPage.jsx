@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check, CheckCircle2 } from 'lucide-react';
 import coupeImg from '../assets/coupe.png';
@@ -160,6 +160,7 @@ export default function BookingPage() {
   const location = useLocation();
   const prefill = location.state ?? {};
 
+  const mainRef = useRef(null);
   const [stepIndex, setStepIndex] = useState(0);
   const [vehicleId, setVehicleId] = useState('');
   const [serviceId, setServiceId] = useState('');
@@ -201,7 +202,14 @@ export default function BookingPage() {
   );
 
   const goToStep = useCallback((index) => {
-    setStepIndex(Math.max(0, Math.min(index, BOOKING_STEPS.length - 1)));
+    const nextIndex = Math.max(0, Math.min(index, BOOKING_STEPS.length - 1));
+    setStepIndex((current) => {
+      if (current !== nextIndex) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        mainRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      return nextIndex;
+    });
   }, []);
 
   const selectVehicle = (id) => {
@@ -377,7 +385,10 @@ export default function BookingPage() {
         </header>
 
         {/* Step content */}
-        <main className="flex-1 overflow-y-auto px-4 py-10 sm:px-6 sm:py-12 lg:px-10 lg:py-14">
+        <main
+          ref={mainRef}
+          className="flex-1 overflow-y-auto px-4 py-10 sm:px-6 sm:py-12 lg:px-10 lg:py-14"
+        >
           <div className="mx-auto max-w-3xl">
             <h1
               className={`font-display font-bold leading-tight text-shine-text ${

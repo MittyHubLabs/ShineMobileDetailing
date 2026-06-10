@@ -4,9 +4,9 @@ export const VEHICLE_PRICING = [
  label: 'Coupe',
  description: 'Small 2-door vehicles.',
  prices: {
- exterior: 30,
- interior: 40,
- full: { basic: 50, standard: 80, premium: 130},
+ exterior: 45,
+ interior: 55,
+ full: { standard: 80, premium: 150},
 },
 },
  {
@@ -14,9 +14,9 @@ export const VEHICLE_PRICING = [
  label: 'Sedan',
  description: 'Standard 4-door vehicles.',
  prices: {
- exterior: 40,
- interior: 50,
- full: { basic: 60, standard: 90, premium: 140},
+ exterior: 55,
+ interior: 65,
+ full: { standard: 90, premium: 165},
 },
 },
  {
@@ -24,9 +24,9 @@ export const VEHICLE_PRICING = [
  label: 'Midsize SUV',
  description: 'Mid-size SUVs and larger crossovers.',
  prices: {
- exterior: 50,
- interior: 60,
- full: { basic: 70, standard: 100, premium: 150},
+ exterior: 65,
+ interior: 75,
+ full: { standard: 100, premium: 180},
 },
 },
  {
@@ -34,9 +34,9 @@ export const VEHICLE_PRICING = [
  label: 'Truck, Van & 3-Row SUV',
  description: 'Full-size trucks, vans, and large 3-row SUVs.',
  prices: {
- exterior: 60,
- interior: 70,
- full: { basic: 80, standard: 110, premium: 160},
+ exterior: 75,
+ interior: 85,
+ full: { standard: 110, premium: 200},
 },
 },
 ];
@@ -64,18 +64,18 @@ export function getServicePrice(vehicleId, serviceId, packageId = 'standard') {
 export function getPackageLabel(serviceId, packageId) {
  if (serviceId === 'exterior') return 'Exterior Only';
  if (serviceId === 'interior') return 'Interior Only';
- const tiers = { basic: 'Basic Shine', standard: 'Standard Shine', premium: 'Premium Shine'};
+ const tiers = { standard: 'Standard Shine', premium: 'Premium Shine'};
  return tiers[packageId] ?? 'Standard Shine';
 }
 
 export function getPackageTierName(packageId) {
- return { basic: 'Basic', standard: 'Standard', premium: 'Premium'}[packageId] ?? 'Standard';
+ return { standard: 'Standard', premium: 'Premium'}[packageId] ?? 'Standard';
 }
 
 export function getEstimatedTime(serviceId, packageId) {
  if (serviceId === 'exterior') return '1–1.5 Hours';
  if (serviceId === 'interior') return '1–2 Hours';
- const times = { basic: '1–2 Hours', standard: '2–3 Hours', premium: '3–5 Hours'};
+ const times = { standard: '2–3 Hours', premium: '3–5 Hours'};
  return times[packageId] ?? '2–3 Hours';
 }
 

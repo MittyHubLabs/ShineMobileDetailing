@@ -1,5 +1,5 @@
 export const PACKAGE_TIER_STYLES = {
-  basic: {
+  exteriorOnly: {
     bg: 'bg-[#1a2744]',
     headerGradient: {
       background: 'linear-gradient(135deg, #1a3a6b 0%, #2a5298 50%, #1a3a6b 100%)',
@@ -16,6 +16,24 @@ export const PACKAGE_TIER_STYLES = {
     columnTint: 'bg-[#1a2744]/40',
     badge: 'bg-[#3b82f6]/20 text-[#3b82f6]',
     includesBorder: 'border-t border-[#3b82f6]/20',
+  },
+  interiorOnly: {
+    bg: 'bg-[#1a2e26]',
+    headerGradient: {
+      background: 'linear-gradient(135deg, #2d4a3e 0%, #3d6454 50%, #2d4a3e 100%)',
+      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)',
+    },
+    borderTop: 'border-t-4 border-t-[#2d4a3e]',
+    accent: 'text-[#2d4a3e]',
+    accentBorder: 'border-[#2d4a3e]',
+    bullet: 'bg-[#2d4a3e]',
+    divider: 'bg-[#2d4a3e]/25',
+    selected: 'ring-2 ring-[#2d4a3e] shadow-lg shadow-[#2d4a3e]/25',
+    headerLabel: 'text-[#2d4a3e]',
+    checkClass: 'text-[#2d4a3e]',
+    columnTint: 'bg-[#1a2e26]/40',
+    badge: 'bg-[#2d4a3e]/20 text-[#2d4a3e]',
+    includesBorder: 'border-t border-[#2d4a3e]/20',
   },
   standard: {
     bg: 'bg-[#0d2e1a]',
@@ -58,5 +76,5 @@ export const PACKAGE_TIER_STYLES = {
 };
 
 export function getTierStyle(tierId) {
-  return PACKAGE_TIER_STYLES[tierId] ?? PACKAGE_TIER_STYLES.basic;
+  return PACKAGE_TIER_STYLES[tierId] ?? PACKAGE_TIER_STYLES.standard;
 }

@@ -4,8 +4,16 @@ import { VEHICLE_PRICING } from '../data/pricing';
 import { getTierStyle } from '../constants/tierStyles';
 import PremiumBadge from './ui/PremiumBadge';
 
-function getFullDetailPriceRange(packageId) {
-  const amounts = VEHICLE_PRICING.map((vehicle) => vehicle.prices.full[packageId]);
+function getColumnPriceRange(colKey) {
+  if (colKey === 'exteriorOnly') {
+    const amounts = VEHICLE_PRICING.map((vehicle) => vehicle.prices.exterior);
+    return `$${Math.min(...amounts)}–$${Math.max(...amounts)}`;
+  }
+  if (colKey === 'interiorOnly') {
+    const amounts = VEHICLE_PRICING.map((vehicle) => vehicle.prices.interior);
+    return `$${Math.min(...amounts)}–$${Math.max(...amounts)}`;
+  }
+  const amounts = VEHICLE_PRICING.map((vehicle) => vehicle.prices.full[colKey]);
   return `$${Math.min(...amounts)}–$${Math.max(...amounts)}`;
 }
 
@@ -30,7 +38,7 @@ function PackageCard({ col }) {
           </div>
         )}
         <p className="mt-2 text-sm font-medium text-white">
-          {getFullDetailPriceRange(col.key)}
+          {getColumnPriceRange(col.key)}
         </p>
       </header>
 

@@ -487,7 +487,7 @@ export default function BookingPage() {
                     const selected = serviceId === svc.id;
                     const price = vehicleId
                       ? svc.id === 'full'
-                        ? `From ${formatPrice(getServicePrice(vehicleId, 'full', 'basic'))}`
+                        ? `From ${formatPrice(getServicePrice(vehicleId, 'full', 'standard'))}`
                         : formatPrice(getServicePrice(vehicleId, svc.id))
                       : null;
                     return (
@@ -530,7 +530,7 @@ export default function BookingPage() {
 
               {/* Step 3: Package */}
               {currentStep.key === 'package' && (
-                <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
                   {PACKAGES.map((p) => {
                     const selected = packageId === p.id;
                     const tier = getTierStyle(p.id);

@@ -6,8 +6,16 @@ import PackageComparisonCards from './PackageComparisonCards';
 import PremiumBadge from './ui/PremiumBadge';
 import ScrollReveal from './ScrollReveal';
 
-function getFullDetailPriceRange(packageId) {
-  const amounts = VEHICLE_PRICING.map((vehicle) => vehicle.prices.full[packageId]);
+function getColumnPriceRange(colKey) {
+  if (colKey === 'exteriorOnly') {
+    const amounts = VEHICLE_PRICING.map((vehicle) => vehicle.prices.exterior);
+    return `$${Math.min(...amounts)}–$${Math.max(...amounts)}`;
+  }
+  if (colKey === 'interiorOnly') {
+    const amounts = VEHICLE_PRICING.map((vehicle) => vehicle.prices.interior);
+    return `$${Math.min(...amounts)}–$${Math.max(...amounts)}`;
+  }
+  const amounts = VEHICLE_PRICING.map((vehicle) => vehicle.prices.full[colKey]);
   return `$${Math.min(...amounts)}–$${Math.max(...amounts)}`;
 }
 
@@ -20,13 +28,14 @@ const TABLE_GRID =
   'border-collapse [&_th]:border-b [&_th]:border-r [&_th]:border-solid [&_th]:border-[#c0c0c0] [&_td]:border-b [&_td]:border-r [&_td]:border-solid [&_td]:border-[#c0c0c0] [&_th:last-child]:border-r-0 [&_td:last-child]:border-r-0 [&_tbody_tr:last-child_td]:border-b-0';
 
 const CHECK_COLORS = {
-  basic: 'text-[#3b82f6]',
+  exteriorOnly: 'text-[#3b82f6]',
+  interiorOnly: 'text-[#2d4a3e]',
   standard: 'text-[#1a6b3a]',
   premium: 'text-[#d4af37]',
 };
 
 function CheckCell({ included, colKey, rowBg }) {
-  const checkColor = CHECK_COLORS[colKey] ?? CHECK_COLORS.basic;
+  const checkColor = CHECK_COLORS[colKey] ?? CHECK_COLORS.standard;
 
   return (
     <td className={`text-center ${rowBg} ${BODY_CELL_PAD}`}>
@@ -61,7 +70,7 @@ export default function PricingSection() {
 
           <div className="hidden md:block">
             <div className="rounded-2xl border-2 border-solid border-[#c0c0c0] bg-white shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
-            <table className={`w-full min-w-[640px] ${TABLE_GRID}`}>
+            <table className={`w-full min-w-[880px] ${TABLE_GRID}`}>
               <thead>
                 <tr>
                   <th
@@ -105,7 +114,7 @@ export default function PricingSection() {
                         className={`text-center ${HEADER_CELL_PAD}`}
                       >
                         <span className="text-xs font-medium text-white sm:text-sm">
-                          {getFullDetailPriceRange(col.key)}
+                          {getColumnPriceRange(col.key)}
                         </span>
                       </th>
                     );
@@ -123,9 +132,14 @@ export default function PricingSection() {
                       >
                         {row.service}
                       </td>
-                      <CheckCell included={row.basic} colKey="basic" rowBg={rowBg} />
-                      <CheckCell included={row.standard} colKey="standard" rowBg={rowBg} />
-                      <CheckCell included={row.premium} colKey="premium" rowBg={rowBg} />
+                      {PACKAGE_COLUMNS.map((col) => (
+                        <CheckCell
+                          key={col.key}
+                          included={row[col.key]}
+                          colKey={col.key}
+                          rowBg={rowBg}
+                        />
+                      ))}
                     </tr>
                   );
                 })}

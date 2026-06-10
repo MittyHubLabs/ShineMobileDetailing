@@ -77,25 +77,25 @@ export default {
 
       addComponents({
         '.btn-primary': {
-          '@apply rounded-xl bg-[#1a6b3a] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition duration-200 hover:bg-[#155a31] hover:shadow-black/15 active:scale-[0.98]':
+          '@apply inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#1a6b3a] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition duration-200 hover:bg-[#155a31] hover:shadow-black/15 active:scale-[0.98]':
             {},
         },
         '.btn-primary-hero': {
-          '@apply px-10 py-[18px] text-lg font-bold sm:px-12 sm:py-5 sm:text-xl':
+          '@apply min-h-[44px] px-10 py-[18px] text-base font-bold sm:px-12 sm:py-5 sm:text-xl':
             {},
         },
         '.section-eyebrow': {
           '@apply text-sm font-semibold uppercase tracking-widest text-brand': {},
         },
         '.section-heading': {
-          '@apply font-display text-3xl font-extrabold tracking-tight text-shine-text sm:text-4xl lg:text-5xl':
+          '@apply font-display text-2xl font-extrabold tracking-tight text-shine-text sm:text-3xl md:text-4xl lg:text-5xl':
             {},
         },
         '.section-body': {
           '@apply text-base font-normal leading-relaxed text-[#5c5c5c] sm:text-lg': {},
         },
         '.btn-secondary': {
-          '@apply rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-shine-text shadow-md transition duration-200 hover:bg-white/90 active:scale-[0.98]':
+          '@apply inline-flex min-h-[44px] items-center justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-shine-text shadow-md transition duration-200 hover:bg-white/90 active:scale-[0.98]':
             {},
         },
         '.input': {

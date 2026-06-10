@@ -44,7 +44,7 @@ export default function TrustAuthority() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-10 sm:mt-12">
-          <div className="mx-auto grid max-w-4xl grid-cols-3 items-start gap-4 sm:gap-8">
+          <div className="mx-auto grid max-w-4xl grid-cols-1 items-start gap-8 sm:grid-cols-3 sm:gap-8">
             {STATS.map((stat) => (
               <div key={stat.label} className="flex flex-col items-center text-center">
                 <p className="font-display text-4xl font-bold leading-none text-brand sm:text-5xl">

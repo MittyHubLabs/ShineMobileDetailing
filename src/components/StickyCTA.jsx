@@ -9,7 +9,7 @@ export default function StickyCTA({ hidden }) {
       <div className="mx-auto max-w-lg">
         <a
           href={PHONE_TEL}
-          className="flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold text-shine-text transition active:scale-[0.98]"
+          className="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold text-shine-text transition active:scale-[0.98]"
         >
           <Phone className="h-5 w-5" />
           Call

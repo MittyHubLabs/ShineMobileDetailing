@@ -18,7 +18,7 @@ export default function PromoBanner() {
         <button
           type="button"
           onClick={() => setDismissed(true)}
-          className="shrink-0 rounded p-1 text-shine-text transition hover:bg-brand/10 hover:text-brand"
+          className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-lg text-shine-text transition hover:bg-brand/10 hover:text-brand"
           aria-label="Dismiss offer"
         >
           <X className="h-4 w-4" />

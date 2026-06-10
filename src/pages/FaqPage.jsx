@@ -37,7 +37,7 @@ export default function FaqPage() {
                 <div className="mt-8 space-y-4">
                   <a
                     href={PHONE_TEL}
-                    className="flex items-center gap-3 text-shine-text transition hover:text-brand"
+                    className="flex min-h-[44px] items-center gap-3 text-shine-text transition hover:text-brand"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
                       <Phone className="h-5 w-5" strokeWidth={2} />
@@ -46,7 +46,7 @@ export default function FaqPage() {
                   </a>
                   <a
                     href={EMAIL_MAILTO}
-                    className="flex items-center gap-3 text-shine-text transition hover:text-brand"
+                    className="flex min-h-[44px] items-center gap-3 text-shine-text transition hover:text-brand"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
                       <Mail className="h-5 w-5" strokeWidth={2} />

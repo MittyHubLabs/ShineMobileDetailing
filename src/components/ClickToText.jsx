@@ -7,7 +7,7 @@ export default function ClickToText({ hidden}) {
  return (
  <a
  href={PHONE_SMS}
- className="fixed bottom-[4.75rem] right-3 z-20 flex max-w-[11rem] items-center gap-2.5 rounded-2xl bg-white border border-[#d0d0d0] shadow-[0_4px_24px_rgba(0,0,0,0.08)] px-3 py-2.5 shadow-xl transition duration-200 hover:-translate-y-0.5 sm:max-w-none sm:px-4 sm:py-3 md:bottom-6"
+ className="fixed bottom-[4.75rem] right-3 z-20 flex min-h-[44px] max-w-[11rem] items-center gap-2.5 rounded-2xl border border-[#d0d0d0] bg-white px-3 py-2.5 shadow-[0_4px_24px_rgba(0,0,0,0.08)] shadow-xl transition duration-200 hover:-translate-y-0.5 sm:max-w-none sm:px-4 sm:py-3 md:bottom-6"
  >
  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand/15 text-shine-text">
  <MessageSquare className="h-4 w-4" />

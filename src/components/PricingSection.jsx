@@ -54,7 +54,8 @@ export default function PricingSection() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <div className="overflow-x-auto rounded-2xl border-2 border-solid border-[#c0c0c0] bg-white shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
+          <div className="-mx-4 overflow-x-auto px-4 [-webkit-overflow-scrolling:touch] sm:mx-0 sm:px-0">
+            <div className="rounded-2xl border-2 border-solid border-[#c0c0c0] bg-white shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
             <table className={`w-full min-w-[640px] ${TABLE_GRID}`}>
               <thead>
                 <tr>
@@ -69,10 +70,11 @@ export default function PricingSection() {
                     return (
                       <th
                         key={col.id}
-                        className={`text-center ${HEADER_CELL_PAD} ${tier.headerBg} ${tier.borderTop}`}
+                        style={tier.headerGradient}
+                        className={`text-center ${HEADER_CELL_PAD} ${tier.borderTop}`}
                       >
                         <div className="flex flex-col items-center gap-1">
-                          <span className={`${HEADER_LABEL} ${tier.headerLabel}`}>
+                          <span className={HEADER_LABEL}>
                             {col.label}
                           </span>
                           {col.badge && (
@@ -94,9 +96,10 @@ export default function PricingSection() {
                     return (
                       <th
                         key={`${col.id}-price`}
-                        className={`text-center ${HEADER_CELL_PAD} ${tier.headerBg}`}
+                        style={tier.headerGradient}
+                        className={`text-center ${HEADER_CELL_PAD}`}
                       >
-                        <span className="text-xs font-medium text-white/80 sm:text-sm">
+                        <span className="text-xs font-medium text-white sm:text-sm">
                           {getFullDetailPriceRange(col.key)}
                         </span>
                       </th>
@@ -123,6 +126,7 @@ export default function PricingSection() {
                 })}
               </tbody>
             </table>
+            </div>
           </div>
         </ScrollReveal>
 

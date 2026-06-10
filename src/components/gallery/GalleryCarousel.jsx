@@ -142,7 +142,7 @@ export default function GalleryCarousel({ onOpenLightbox, paused = false }) {
 
   return (
     <div className="relative w-full bg-[#1a1a1a]">
-      <div className="relative mx-auto flex h-[min(70vh,640px)] w-full max-w-[1400px] items-center justify-center px-14 sm:px-20">
+      <div className="relative mx-auto flex h-[min(60vh,640px)] w-full max-w-[1400px] items-center justify-center px-12 sm:h-[min(70vh,640px)] sm:px-20">
         <div
           className={`h-full w-full transition-all duration-[400ms] ease-in-out ${
             visible ? 'translate-x-0 opacity-100' : 'translate-x-2 opacity-0'
@@ -159,7 +159,7 @@ export default function GalleryCarousel({ onOpenLightbox, paused = false }) {
         <button
           type="button"
           onClick={handlePrev}
-          className="absolute left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition hover:bg-white/20 sm:left-6 sm:h-12 sm:w-12"
+          className="absolute left-2 top-1/2 z-10 flex min-h-[44px] min-w-[44px] -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition hover:bg-white/20 sm:left-6"
           aria-label="Previous slide"
         >
           <ChevronLeft className="h-6 w-6 sm:h-7 sm:w-7" />
@@ -168,7 +168,7 @@ export default function GalleryCarousel({ onOpenLightbox, paused = false }) {
         <button
           type="button"
           onClick={handleNext}
-          className="absolute right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition hover:bg-white/20 sm:right-6 sm:h-12 sm:w-12"
+          className="absolute right-2 top-1/2 z-10 flex min-h-[44px] min-w-[44px] -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition hover:bg-white/20 sm:right-6"
           aria-label="Next slide"
         >
           <ChevronRight className="h-6 w-6 sm:h-7 sm:w-7" />
@@ -181,14 +181,18 @@ export default function GalleryCarousel({ onOpenLightbox, paused = false }) {
             key={galleryItem.id}
             type="button"
             onClick={() => handleDot(dotIndex)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              dotIndex === index
-                ? 'w-6 bg-brand'
-                : 'w-2 bg-white/35 hover:bg-white/55'
-            }`}
+            className="flex min-h-[44px] min-w-[44px] items-center justify-center"
             aria-label={`Go to slide ${dotIndex + 1}`}
             aria-current={dotIndex === index ? 'true' : undefined}
-          />
+          >
+            <span
+              className={`block rounded-full transition-all duration-300 ${
+                dotIndex === index
+                  ? 'h-2 w-6 bg-brand'
+                  : 'h-2 w-2 bg-white/35 hover:bg-white/55'
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

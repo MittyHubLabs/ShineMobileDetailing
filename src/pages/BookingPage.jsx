@@ -338,16 +338,16 @@ export default function BookingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-transparent text-shine-text lg:flex">
+    <div className="flex min-h-screen flex-col bg-transparent text-shine-text lg:flex-row">
       {/* Main column */}
-      <div className="flex min-h-screen flex-1 flex-col lg:min-h-0">
+      <div className="flex min-w-0 flex-1 flex-col lg:min-h-0">
         {/* Progress bar */}
         <header className="sticky top-0 z-30 border-b border-black/10 bg-white/75 backdrop-blur-md">
           <div className="mx-auto flex max-w-3xl items-center gap-4 px-4 py-4 sm:px-6 lg:max-w-none lg:px-8">
             <button
               type="button"
               onClick={back}
-              className="shrink-0 rounded-lg p-2 text-shine-text transition hover:bg-black/5"
+              className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-lg text-shine-text transition hover:bg-black/5"
               aria-label={stepIndex === 0 ? 'Back to home' : 'Back'}
             >
               <ArrowLeft className="h-5 w-5" />
@@ -382,8 +382,8 @@ export default function BookingPage() {
             <h1
               className={`font-display font-bold leading-tight text-shine-text ${
                 currentStep.key === 'vehicle'
-                  ? 'text-4xl sm:text-5xl lg:text-[3rem]'
-                  : 'text-3xl sm:text-4xl lg:text-[2.75rem]'
+                  ? 'text-3xl sm:text-5xl lg:text-[3rem]'
+                  : 'text-2xl sm:text-4xl lg:text-[2.75rem]'
               }`}
             >
               {currentStep.title}
@@ -399,7 +399,7 @@ export default function BookingPage() {
             <div className="mt-10 sm:mt-12">
               {/* Step 1: Vehicle */}
               {currentStep.key === 'vehicle' && (
-                <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
                   {VEHICLES.map((v) => {
                     const selected = vehicleId === v.id;
                     const vehicleImage = VEHICLE_IMAGES[v.id];
@@ -604,7 +604,7 @@ export default function BookingPage() {
 
               {/* Step 5: Customer details */}
               {currentStep.key === 'details' && (
-                <div className="mx-auto w-full max-w-lg space-y-7">
+                <div className="w-full space-y-7 sm:mx-auto sm:max-w-lg">
                   <BookingField label="Full Name">
                     <input
                       type="text"
@@ -682,19 +682,6 @@ export default function BookingPage() {
             </div>
           </div>
         </main>
-
-        {/* Mobile summary — hidden on details step to avoid crowding the form */}
-        {currentStep.key !== 'details' && (
-          <div className="lg:hidden">
-            <BookingSummaryPanel
-              vehicleId={vehicleId}
-              serviceId={serviceId}
-              packageId={packageId}
-              addonIds={addonIds}
-              compact
-            />
-          </div>
-        )}
       </div>
 
       {/* Desktop summary */}
@@ -706,6 +693,16 @@ export default function BookingPage() {
           addonIds={addonIds}
         />
       </aside>
+
+      {/* Mobile summary — full panel at bottom of page */}
+      <div className="shrink-0 lg:hidden">
+        <BookingSummaryPanel
+          vehicleId={vehicleId}
+          serviceId={serviceId}
+          packageId={packageId}
+          addonIds={addonIds}
+        />
+      </div>
     </div>
   );
 }

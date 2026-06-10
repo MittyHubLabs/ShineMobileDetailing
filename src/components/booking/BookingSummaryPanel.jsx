@@ -61,7 +61,7 @@ export default function BookingSummaryPanel({
       className={`flex flex-col text-[#1a1a1a] ${
         compact
           ? 'border-t border-[#d0d0d0] bg-white px-5 py-4'
-          : 'm-4 h-[calc(100%-2rem)] rounded-2xl border border-[#d0d0d0] bg-white p-6 shadow-[0_4px_24px_rgba(0,0,0,0.08)] lg:m-6 lg:p-8'
+          : 'mx-4 mb-4 mt-0 rounded-2xl border border-[#d0d0d0] bg-white p-6 shadow-[0_4px_24px_rgba(0,0,0,0.08)] lg:m-6 lg:h-[calc(100%-2rem)] lg:p-8'
       }`}
     >
       <h2 className="font-display text-xl font-bold text-[#1a1a1a] lg:text-2xl">Your Detail</h2>

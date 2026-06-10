@@ -7,6 +7,7 @@
   body,
   #root {
     min-height: 100%;
+    overflow-x: hidden;
     background: radial-gradient(ellipse at 50% 35%, #d8d8d8 0%, #c8c8c8 35%, #b0b0b0 65%, #909090 100%);
     background-attachment: fixed;
     color: #1a1a1a;
@@ -24,6 +25,7 @@
 @layer components {
   .luxury-input {
     width: 100%;
+    min-height: 44px;
     background-color: transparent;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -46,6 +48,7 @@
 
   .booking-field-input {
     width: 100%;
+    min-height: 44px;
     background-color: transparent;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;

@@ -1,7 +1,10 @@
 export const PACKAGE_TIER_STYLES = {
   basic: {
     bg: 'bg-[#1a2744]',
-    headerBg: 'bg-[#1a3a6b]',
+    headerGradient: {
+      background: 'linear-gradient(135deg, #1a3a6b 0%, #2a5298 50%, #1a3a6b 100%)',
+      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)',
+    },
     borderTop: 'border-t-4 border-t-[#3b82f6]',
     accent: 'text-[#3b82f6]',
     accentBorder: 'border-[#3b82f6]',
@@ -16,7 +19,10 @@ export const PACKAGE_TIER_STYLES = {
   },
   standard: {
     bg: 'bg-[#0d2e1a]',
-    headerBg: 'bg-[#1a5c35]',
+    headerGradient: {
+      background: 'linear-gradient(135deg, #1a5c35 0%, #2d8a50 50%, #1a5c35 100%)',
+      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)',
+    },
     borderTop: 'border-t-4 border-t-[#1a6b3a]',
     accent: 'text-[#1a6b3a]',
     accentBorder: 'border-[#1a6b3a]',
@@ -32,7 +38,11 @@ export const PACKAGE_TIER_STYLES = {
   },
   premium: {
     bg: 'bg-[#2a1f00]',
-    headerBg: 'bg-[#7c5a1e]',
+    headerGradient: {
+      background:
+        'linear-gradient(135deg, #7c5a1e 0%, #c9a84c 40%, #f0c040 60%, #c9a84c 80%, #7c5a1e 100%)',
+      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)',
+    },
     borderTop: 'border-t-4 border-t-[#d4af37]',
     accent: 'text-[#d4af37]',
     accentBorder: 'border-[#d4af37]',

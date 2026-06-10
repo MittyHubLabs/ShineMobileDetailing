@@ -18,15 +18,15 @@ export default function Hero() {
             <div className="flex flex-col items-center gap-1 sm:gap-1.5">
               <Logo
                 size="none"
-                className="mx-auto h-auto w-[240px] max-w-full border-0 bg-transparent object-contain shadow-none"
+                className="mx-auto h-auto w-[180px] max-w-full border-0 bg-transparent object-contain shadow-none sm:w-[220px] lg:w-[240px]"
               />
-              <p className="section-eyebrow flex items-center justify-center gap-2 tracking-[0.25em]">
+              <p className="section-eyebrow flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs tracking-[0.2em] sm:text-sm sm:tracking-[0.25em]">
                 <span>Shine Mobile Detailing</span>
                 <span className="h-3 w-px shrink-0 bg-brand" aria-hidden="true" />
                 <span>Orlando</span>
               </p>
             </div>
-            <h1 className="font-display text-4xl font-extrabold leading-[1.06] tracking-tight text-shine-text sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-[1.75rem] font-extrabold leading-[1.1] tracking-tight text-shine-text sm:text-4xl md:text-5xl lg:text-6xl">
               Bring Your Car Back to Shine
             </h1>
             <div
@@ -40,10 +40,10 @@ export default function Hero() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={120} className="mt-8 sm:mt-10">
+        <ScrollReveal delay={120} className="mt-8 w-full sm:mt-10 sm:w-auto">
           <Link
             to="/packages"
-            className="btn-primary btn-primary-hero group inline-flex items-center justify-center gap-2.5"
+            className="btn-primary btn-primary-hero group flex w-full items-center justify-center gap-2.5 sm:inline-flex sm:w-auto"
           >
             Book Now
             <ArrowRight className="h-5 w-5 transition group-hover:translate-x-0.5 sm:h-6 sm:w-6" />

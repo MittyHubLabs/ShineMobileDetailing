@@ -2,6 +2,7 @@ import { Check } from 'lucide-react';
 import { PACKAGE_COLUMNS, PACKAGE_COMPARISON } from '../data/comparison';
 import { VEHICLE_PRICING } from '../data/pricing';
 import { getTierStyle } from '../constants/tierStyles';
+import PackageComparisonCards from './PackageComparisonCards';
 import PremiumBadge from './ui/PremiumBadge';
 import ScrollReveal from './ScrollReveal';
 
@@ -54,7 +55,11 @@ export default function PricingSection() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <div className="-mx-4 overflow-x-auto px-4 [-webkit-overflow-scrolling:touch] sm:mx-0 sm:px-0">
+          <div className="md:hidden">
+            <PackageComparisonCards />
+          </div>
+
+          <div className="hidden md:block">
             <div className="rounded-2xl border-2 border-solid border-[#c0c0c0] bg-white shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
             <table className={`w-full min-w-[640px] ${TABLE_GRID}`}>
               <thead>
